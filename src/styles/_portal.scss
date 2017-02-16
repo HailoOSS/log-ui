@@ -1,0 +1,18 @@
+// Header styling.
+.hailo-portal-header.navbar > .container > .navbar-header > .navbar-brand {
+  padding: 5px 15px;
+
+  & > .hailo-icon.hailo-logo-text svg {
+    height: 14px;
+    width: 50px;
+  }
+}
+
+.hailo-user-menu {
+  float: right;
+}
+
+.hailo-user-menu__username {
+    margin-right: 15px;
+    margin-left: 0;
+}

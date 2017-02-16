@@ -1,0 +1,20 @@
+{
+    "name": "Logs",
+    "description": "Browse service and access logs for H2 services",
+    "developer": {
+        "name": "Hailo",
+        "url": "https://www.hailocab.com"
+    },
+    "icons": {
+        "128": "/img/app-icon-128.png",
+        "60": "/img/app-icon-60.png"
+    },
+    "hailo": {
+        "roles": [
+            "ADMIN"
+        ],
+        "tags": [
+            "tech"
+        ]
+    }
+}

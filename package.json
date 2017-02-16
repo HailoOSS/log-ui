@@ -1,0 +1,33 @@
+{
+  "name": "portal-web-template",
+  "version": "0.3.0",
+  "private": true,
+  "dependencies": {
+    "auth-web-bundle": "git+ssh://git@github.com:hailocab/auth-web-bundle#upgrade-and-cleanup",
+    "classnames": "^2.1.2",
+    "debug": "2.1.1",
+    "flux": "2.0.1",
+    "flux-core": "git+ssh://git@github.com:hailocab/flux-core#v1.2.0",
+    "gulp": "3.8.10",
+    "gulp-common": "git+ssh://git@github.com:hailocab/gulp-common#v3.2.3",
+    "hob-web-bundle": "git+ssh://git@github.com:hailocab/hob-web-bundle#v1.0.0",
+    "icon-web-components": "git+ssh://git@github.com:hailocab/icon-web-components#v0.4.0",
+    "immutable": "3.6.2",
+    "lodash": "3.2.0",
+    "moment": "2.9.0",
+    "portal-web-bundle": "git+ssh://git@github.com:hailocab/portal-web-bundle#upgrade-header",
+    "react": "0.13.3",
+    "react-bootstrap": "0.25.2",
+    "react-bootstrap-datetimepicker": "0.0.21",
+    "react-router": "0.13.3",
+    "react-select": "0.6.12",
+    "router-web-bundle": "git+ssh://git@github.com:hailocab/router-web-bundle#v1.1.0",
+    "web-core": "git+ssh://git@github.com:hailocab/web-core#region-context",
+    "web-toolkit": "git+ssh://git@github.com:hailocab/web-toolkit#v5.0.3",
+    "web-ui": "git+ssh://git@github.com:hailocab/web-ui#v0.1"
+  },
+  "scripts": {
+    "gulp": "./node_modules/gulp/bin/gulp.js",
+    "start": "gulp start"
+  }
+}

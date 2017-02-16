@@ -1,0 +1,484 @@
+@import "../../node_modules/web-ui/src/hailo-theme";
+@import "./react-select";
+@import "./react-datepicker";
+@import "portal";
+@import "timepicker";
+
+body {
+    background-color: #FBFBFB;
+    overflow: hidden;
+}
+
+.hailo-layout {
+    overflow: auto;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    .navbar {
+        margin-bottom: 20px;
+    }
+
+    .hailo-portal-header .row {
+        border-left: 0.1rem solid #E3E3E3;
+        border-right: 0.1rem solid #E3E3E3;
+    }
+
+    .navbar-header {
+        .hailo-logo {
+            width: 225px;
+            float: left;
+            margin-right: 50px;
+            min-width: 225px;
+        }
+    }
+}
+
+.hailo-layout-fluid {
+    overflow: hidden;
+    padding-top: 5.6rem;
+
+    .navbar-header {
+        border-right: 0.1rem solid #E3E3E3;
+    }
+
+    .app-content {
+        padding: 0;
+
+        .alert {
+            margin: 30px;
+        }
+        .alert.alert-dismissable {
+            position: fixed;
+            right: 0;
+            max-width: 40%;
+        }
+    }
+}
+
+.hailo-portal-header {
+    border-bottom: 0.1rem solid #e3e3e3;
+    background-color: #fff;
+    min-height: 5.6rem;
+
+
+    .navbar-brand {
+        padding: 0 !important;
+        height: 5.6rem;
+    }
+
+    .hailo-logo {
+        display: block;
+        height: 5.6rem;
+        padding: 0.7rem 0;
+        float: left;
+
+        svg {
+            height: 100%;
+            margin: 0 auto;
+            display: block;
+        }
+    }
+
+    .hailo-title {
+        color: #2B2B2B;
+        line-height: 5.6rem;
+        padding: 0 1rem;
+        padding-left: 15px;
+        float: left;
+        font-size: 2.5rem;
+        font-weight: normal;
+    }
+
+    .navbar-nav {
+        border-left: 0.1rem solid #E3E3E3;
+    }
+    .navbar-nav.navbar-right {
+        margin-right: 0;
+    }
+
+    .navbar-nav > li {
+        border-right: 0.1rem solid #E3E3E3;
+    }
+
+    .navbar-nav>li>a {
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+
+    .navbar-text {
+        margin-top: 18px;
+        margin-bottom: 19px;
+    }
+
+    .navbar-btn {
+        margin-top: 11px;
+        margin-bottom: 11px;
+    }
+
+    .hailo-user-menu {
+        padding: 0 15px;
+    }
+
+    .region-selector {
+        // width: 130px;
+
+        .dropdown-toggle > span:last-of-type {
+            // float: right;
+        }
+
+        .dropdown-menu {
+            min-width: 0;
+            width: 100%;
+        }
+    }
+
+    .env-info-live {
+        background-color: #ffb300;
+
+        .navbar-text{
+            color: #2B2B2B !important;
+            font-weight: bold;
+        }
+    }
+}
+
+/* Footer */
+.log-controls {
+    // position: absolute;
+    // bottom: 0;
+    // left: 0;
+    // right: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 5.6rem;
+
+    border-top: 0.1rem solid #e3e3e3;
+    background-color: #fff;
+}
+
+/* Sidebar navigation */
+.app-sidebar {
+    background-color: #f5f5f5;
+    position: fixed;
+    top: 5.6rem;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    z-index: 1000;
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.sidebar-return-link {
+    background-color: #FBFBFB;
+    border-top: 1px solid #DDD;
+    padding: 1.4rem 1rem;
+    height: 4.6rem;
+    width: 100%;
+    position: fixed;
+}
+
+.filter-tab {
+    border-right: 1px solid #eee;
+}
+
+/* Main content */
+.app-content {
+    position: fixed;
+    top: 5.6rem;
+    bottom: 0;
+    left: 0;
+    padding-left: 0;
+    background-color: #FFF;
+}
+
+.filter-group {
+    padding: 0 15px 10px 15px;
+}
+
+.log-lines-info {
+    margin: 0 auto;
+}
+
+.log-items {
+    height: calc(100% - 5.6rem);
+    overflow-y: auto;
+
+    padding: 10px;
+
+    font-family: "Ubuntu Mono", Menlo,Monaco,Consolas,"Courier New",monospace;
+    word-wrap: break-word;
+
+    position: absolute;
+    top: 5.6rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    .load-more {
+        margin: 0 auto;
+    }
+}
+
+.log-item {
+    padding: 1px 0;
+
+    .glyphicon {
+        margin-right: 5px;
+        font-size: 12px;
+    }
+
+    .host-pixel {
+        height: 6px;
+        width: 6px;
+        display: inline-block;
+        margin: 2px 5px 2px 0;
+    }
+
+    .log-timestamp, .log-level, .log-component, .log-message {
+        padding: 0 4px;
+    }
+
+    .log-level, .log-component {
+        font-weight: bold;
+    }
+
+    .log-timestamp {
+        color: #7F7F7F;
+    }
+
+    .log-level-trc {
+        color: #AEC6CF
+    }
+
+    .log-level-dbg {
+        color: #779ECB
+    }
+
+    .log-level-inf {
+        color:  #77DD77
+    }
+
+    .log-level-wrn {
+        color: #8a6d3b
+    }
+
+    .log-level-err, .log-level-crt {
+        color: #a94442
+    }
+
+    .well, .table {
+        margin-bottom: 0;
+    }
+
+    .log-params {
+        td:first-of-type {
+            min-width: 20%;
+        }
+    }
+}
+
+.sidebar-controls, .log-controls {
+    .btn.btn-default {
+        background-color: transparent;
+        color: #ffb300;
+        border-color: #5b5b5b;
+        outline: 0;
+    }
+}
+
+/* Sidebar footer */
+.sidebar-controls {
+    background-color: #3b3b3b;
+    border-right: 0.1rem solid #464646;
+    padding: 0 15px;
+
+    & > div {
+        height: 5.6rem;
+        padding: 1rem 0;
+    }
+
+    .btn {
+        font-weight: 100;
+        width: 180px;
+    }
+}
+
+/* Control footer */
+.log-controls {
+    background-color: #3b3b3b;
+    display: -webkit-flex;
+    display: flex;
+    padding: 0 15px;
+
+    .control-buttons {
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        line-height: 30px;
+        margin-top: 10px;
+        flex: 0 0 118px;
+    }
+
+    .search-form {
+        padding: 10px;
+        flex: 1;
+
+        input {
+            background: #ffb300;
+            border: 1px solid #464648;
+            color: #3b3b3b
+        }
+    }
+
+    .form-control::-moz-placeholder {
+      color: #888888;
+    }
+    .form-control:-ms-input-placeholder {
+      color: #888888;
+    }
+    .form-control::-webkit-input-placeholder {
+      color: #888888;
+    }
+
+    .control-input-group {
+        padding: 0;
+    }
+
+    .control-date-range-from input {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: 0;
+    }
+
+    .control-date-range-to input {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .timepicker-footer {
+        flex: 0;
+
+        .timepicker-btn {
+            letter-spacing: 1px;
+            margin-top: 10px;
+            font-weight: 100;
+        }
+
+        .text-warning {
+            color: #fff;
+        }
+    }
+
+    .timepicker-popover {
+        .btn-default {
+            color: #333;
+            background-color: #fff;
+            border-color: #ccc;
+        }
+
+        .input-group {
+            width: 100%;
+        }
+
+        .close-popup-button {
+            text-align: right;
+        }
+    }
+
+    .live-tail-toggle {
+        button {
+            width: 100%;
+        }
+    }
+
+    .view-mode-toggle {
+        position: absolute;
+        right: 16px;
+        top: 10px;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        line-height: 30px;
+        color: #858a90;
+        opacity: .6;
+        -ms-filter: "alpha(Opacity=60)";
+        filter: alpha(opacity=60);
+        cursor: pointer;
+
+        .i-font {
+            font-family: "Proxima Nova Regular",'Helvetica Neue',Arial,Helvetica,sans-serif;
+        }
+
+        .circle {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            background-color: #858a90;
+        }
+
+        &.disabled {
+            cursor: not-allowed;
+            opacity: .2;
+            -ms-filter: "alpha(Opacity=20)";
+            filter: alpha(opacity=20);
+        }
+
+        &.is-live {
+            opacity: 1;
+            -ms-filter: none;
+            filter: none;
+
+            & > .circle {
+                background-color: #f9220b;
+                -webkit-box-shadow: 0 0 4px #fa3823;
+                box-shadow: 0 0 4px #fa3823;
+            }
+        }
+    }
+}
+
+/* Loading Spinner */
+.react-spinner {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  top: 50%;
+  left: 50%;
+  margin-top: 32px;
+}
+
+.react-spinner_bar {
+  -webkit-animation: react-spinner_spin 1.2s linear infinite;
+  -moz-animation: react-spinner_spin 1.2s linear infinite;
+  animation: react-spinner_spin 1.2s linear infinite;
+  border-radius: 5px;
+  background-color: #3b3b3b;
+  position: absolute;
+  width: 20%;
+  height: 7.8%;
+  top: -3.9%;
+  left: -10%;
+}
+
+@keyframes react-spinner_spin {
+ 0% { opacity: 1; }
+ 100% { opacity: 0.15; }
+}
+
+@-moz-keyframes react-spinner_spin {
+ 0% { opacity: 1; }
+ 100% { opacity: 0.15; }
+}
+
+@-webkit-keyframes react-spinner_spin {
+ 0% { opacity: 1; }
+ 100% { opacity: 0.15; }
+}

@@ -1,0 +1,46 @@
+dependencies:
+  pre:
+    - git clone git@github.com:hailocab/circle-ci-scripts $HOME/circle_ci
+    - git submodule update --init --recursive
+    - $HOME/circle_ci/setup_env.sh
+      # Web specific stuff here
+    - |
+      if [ -e bower.json ]; then
+        npm install bower
+        bower update
+      fi
+    - |
+      if [ -e Gemfile ]; then
+        bundle install --binstubs --path=vendor/gems
+      fi
+
+test:
+  pre:
+    - |
+      if [ -e Gruntfile.js ]; then
+        echo "Running 'grunt build --branch=${CIRCLE_BRANCH}'"
+        if [ -e Gemfile ]; then
+          bundle exec grunt build --branch=$CIRCLE_BRANCH
+        else
+          grunt build --branch=$CIRCLE_BRANCH
+        fi
+      fi
+    - |
+      if [ -e gulpfile.js ]; then
+        echo "Running 'gulp build --branch=${CIRCLE_BRANCH}'"
+        if [ -e Gemfile ]; then
+          bundle exec gulp build --branch=$CIRCLE_BRANCH
+        else
+          gulp build --branch=$CIRCLE_BRANCH
+        fi
+      fi
+  override:
+    - echo "test"
+
+deployment:
+  all:
+    branch: /.*/
+    commands:
+      - $HOME/circle_ci/package_web.sh
+      - $HOME/circle_ci/publish_build.sh
+

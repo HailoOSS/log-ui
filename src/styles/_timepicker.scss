@@ -1,0 +1,90 @@
+.nav.timepicker-nav {
+    margin-right: 0;
+}
+
+.timepicker-popover {
+    width: 775px;
+    position: absolute;
+    top: 6.6rem;
+    right: 0.8rem;
+    padding: 10px;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #E3E3E3;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+
+    h3 {
+        margin-top: 0;
+    }
+
+    .live-tail-toggle {
+        padding: 10px 0px;
+    }
+}
+
+.timepicker-timestring {
+    font-weight: normal;
+}
+
+.timepicker-nav-btn {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.timepicker-dropdown {
+    margin: -8px -10px 10px 5px;
+    padding: 10px 20px;
+    float: right;
+}
+
+.timepicker-btn-apply {
+    margin: 0 0 0 15px;
+}
+
+.timepicker-utc {
+    background-color: #333;
+    color: #f80;
+    font-size: 75%;
+    padding: 3px;
+    border-radius: 2px;
+    font-weight: bold;
+    margin-left: 4px;
+}
+
+.timepicker-absolute-section {
+    border-right: 1px solid #E3E3E3;
+
+    select {
+        width: 183px;
+        margin-bottom: 0;
+    }
+}
+
+.timepicker-relative-section {
+    min-height: 237px;
+    display: block;
+
+    // float: left;
+    ul {
+        list-style: none;
+        float: left;
+        margin: 0 30px 10px 0px;
+        padding: 0;
+
+        li {
+            line-height: 22px;
+        }
+
+        li.active {
+            border-bottom: 1px solid #33b5e5;
+            margin: 3px 0;
+            font-weight: bold;
+        }
+
+        a {
+            cursor: pointer;
+        }
+    }
+}
